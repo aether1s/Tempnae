@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Navy Roblox Group - Missions</title>
+    <style>
+        /* General Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { font-family: 'Arial', sans-serif; background: url('images/navy-banner.png') no-repeat center center/cover; color: white; overflow-x: hidden; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(0, 0, 0, 0.8); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+        header h1 { font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+
+        header .menu-button { font-size: 18px; background: #005f73; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
+        header .menu-button:hover { background: #028090; }
+
+        .menu { position: fixed; top: 0; right: 0; width: 350px; height: 100vh; background: #002c43; color: white; transform: translateX(100%); transition: transform 0.3s ease; padding: 40px 20px; box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); }
+        .menu.active { transform: translateX(0); }
+
+        .menu ul { list-style: none; margin-top: 30px; }
+        .menu ul li { margin: 20px 0; position: relative; }
+        .menu ul li a { text-decoration: none; font-size: 20px; font-weight: 500; color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; border-radius: 5px; transition: background 0.3s ease; }
+        .menu ul li a:hover { background: #005f73; }
+
+        .submenu { display: none; padding-left: 15px; margin-top: 10px; animation: fadeIn 0.3s ease; }
+        .submenu li { margin: 10px 0; }
+        .submenu li a { font-size: 18px; color: #cce7ef; background: transparent; padding: 5px 10px; transition: color 0.3s ease; }
+        .submenu li a:hover { color: white; }
+
+        .toggle-icon { font-size: 20px; color: white; margin-left: 10px; }
+
+        .hero-section { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; background: rgba(0, 0, 0, 0.6); }
+        .hero-section h1 { font-size: 60px; font-weight: bold; text-transform: uppercase; line-height: 1.2; }
+        .hero-section p { font-size: 24px; margin-top: 20px; max-width: 600px; line-height: 1.5; }
+
+        footer { text-align: center; padding: 15px; background: rgba(0, 0, 0, 0.8); color: white; font-size: 14px; letter-spacing: 1px; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Royal Navy</h1>
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+    </header>
+
+    <div class="menu" id="menu">
+        <ul>
+            <li>
+                <a href="home.html">Home</a> <!-- Link to Home page -->
+            </li>
+            <li>
+                <a href="#what-we-do">What We Do <span class="toggle-icon" onclick="toggleSubmenu(event)">+</span></a>
+                <ul class="submenu">
+                    <li><a href="missions.html">Missions</a></li> <!-- Link to Missions page -->
+                    <li><a href="training.html">Training</a></li> <!-- Link to Training page -->
+                    <li><a href="support.html">Support</a></li> <!-- Link to Support page -->
+                </ul>
+            </li>
+            <li>
+                <a href="#organisation">Organisation <span class="toggle-icon" onclick="toggleSubmenu(event)">+</span></a>
+                <ul class="submenu">
+                    <li><a href="hierarchy.html">Hierarchy</a></li> <!-- Link to Hierarchy page -->
+                    <li><a href="divisions.html">Divisions</a></li> <!-- Link to Divisions page -->
+                </ul>
+            </li>
+            <li>
+                <a href="#equipment">Equipment <span class="toggle-icon" onclick="toggleSubmenu(event)">+</span></a>
+                <ul class="submenu">
+                    <li><a href="ships.html">Ships</a></li> <!-- Link to Ships page -->
+                    <li><a href="weaponary.html">Weaponry</a></li> <!-- Link to Weaponry page -->
+                </ul>
+            </li>
+            <li>
+                <a href="locations.html">Locations & Operations</a> <!-- Link to Locations page -->
+            </li>
+            <li>
+                <a href="careers.html">Careers</a> <!-- Link to Careers page -->
+            </li>
+            <li>
+                <a href="families.html">Families & Veterans</a> <!-- Link to Families & Veterans page -->
+            </li>
+            <li>
+                <a href="events.html">Events</a> <!-- Link to Events page -->
+            </li>
+            <li>
+                <a href="news.html">News</a> <!-- Link to News page -->
+            </li>
+        </ul>
+    </div>
+    
+
+    <section class="hero-section">
+        <h1>Missions</h1>
+        <p>Learn about the Royal Navy's missions and global operations.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Royal Navy Roblox Group. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

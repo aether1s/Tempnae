@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Navy Roblox Group - Careers</title>
+    <style>
+        /* General Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { font-family: 'Arial', sans-serif; background: url('images/navy-banner.png') no-repeat center center/cover; color: white; overflow-x: hidden; height: 100vh; display: flex; flex-direction: column; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(0, 0, 0, 0.8); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+        header h1 { font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+
+        header .menu-button { font-size: 18px; background: #005f73; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
+        header .menu-button:hover { background: #028090; }
+
+        .menu { position: fixed; top: 0; right: 0; width: 350px; height: 100vh; background: #002c43; color: white; transform: translateX(100%); transition: transform 0.3s ease; padding: 40px 20px; box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); }
+        .menu.active { transform: translateX(0); }
+
+        .menu ul { list-style: none; margin-top: 30px; }
+        .menu ul li { margin: 20px 0; position: relative; }
+        .menu ul li a { text-decoration: none; font-size: 20px; font-weight: 500; color: #ffffff; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; border-radius: 5px; transition: background 0.3s ease; }
+        .menu ul li a:hover { background: #005f73; }
+
+        .submenu { display: none; padding-left: 15px; margin-top: 10px; animation: fadeIn 0.3s ease; }
+        .submenu li { margin: 10px 0; }
+        .submenu li a { font-size: 18px; color: #cce7ef; background: transparent; padding: 5px 10px; transition: color 0.3s ease; }
+        .submenu li a:hover { color: white; }
+
+        .toggle-icon { font-size: 20px; color: white; margin-left: 10px; }
+
+        /* Careers Section */
+        .careers-section { padding: 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; overflow-y: auto; }
+
+        .career-box { background-color: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); height: 100%; }
+        .career-box h2 { font-size: 24px; margin-bottom: 10px; }
+        .career-box p { font-size: 18px; margin-bottom: 15px; }
+        .career-box ul { font-size: 16px; list-style: none; margin: 0; padding-left: 20px; }
+        .career-box ul li { margin-bottom: 5px; }
+
+        footer { text-align: center; padding: 15px; background: rgba(0, 0, 0, 0.8); color: white; font-size: 14px; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Royal Navy</h1>
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+    </header>
+
+<div class="menu" id="menu">
+    <ul>
+        <li>
+            <button onclick="location.href='home.html'">Home</button> <!-- Button to go to Home page -->
+        </li>
+        <li>
+            <button onclick="toggleSubmenu(event)">What We Do <span class="toggle-icon">+</span></button>
+            <ul class="submenu">
+                <li><button onclick="location.href='missions.html'">Missions</button></li> <!-- Button to go to Missions page -->
+                <li><button onclick="location.href='training.html'">Training</button></li> <!-- Button to go to Training page -->
+                <li><button onclick="location.href='support.html'">Support</button></li> <!-- Button to go to Support page -->
+            </ul>
+        </li>
+        <li>
+            <button onclick="toggleSubmenu(event)">Organisation <span class="toggle-icon">+</span></button>
+            <ul class="submenu">
+                <li><button onclick="location.href='hierarchy.html'">Hierarchy</button></li> <!-- Button to go to Hierarchy page -->
+                <li><button onclick="location.href='divisions.html'">Divisions</button></li> <!-- Button to go to Divisions page -->
+            </ul>
+        </li>
+        <li>
+            <button onclick="toggleSubmenu(event)">Equipment <span class="toggle-icon">+</span></button>
+            <ul class="submenu">
+                <li><button onclick="location.href='ships.html'">Ships</button></li> <!-- Button to go to Ships page -->
+                <li><button onclick="location.href='weaponary.html'">Weaponry</button></li> <!-- Button to go to Weaponry page -->
+            </ul>
+        </li>
+        <li>
+            <button onclick="location.href='locations.html'">Locations & Operations</button> <!-- Button to go to Locations page -->
+        </li>
+        <li>
+            <button onclick="location.href='careers.html'">Careers</button> <!-- Button to go to Careers page -->
+        </li>
+        <li>
+            <button onclick="location.href='families.html'">Families & Veterans</button> <!-- Button to go to Families & Veterans page -->
+        </li>
+        <li>
+            <button onclick="location.href='events.html'">Events</button> <!-- Button to go to Events page -->
+        </li>
+        <li>
+            <button onclick="location.href='news.html'">News</button> <!-- Button to go to News page -->
+        </li>
+    </ul>
+</div>
+
+<script>
+    function toggleSubmenu(event) {
+        event.stopPropagation();  // Prevent the click event from propagating to parent elements
+        const submenu = event.target.closest('li').querySelector('.submenu');
+        if (submenu) {
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; // Toggle submenu visibility
+            const toggleIcon = event.target.querySelector('.toggle-icon');
+            toggleIcon.textContent = submenu.style.display === 'block' ? '−' : '+'; // Change toggle icon
+        }
+    }
+</script>
+
+    
+
+    <section class="careers-section">
+        <!-- Job Type 1 -->
+        <div class="career-box">
+            <h2>Naval Officer</h2>
+            <p><strong>Description:</strong> Lead your crew and engage in vital naval operations. A challenging but rewarding career.</p>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Must be 18 or older</li>
+                <li>Strong leadership and communication skills</li>
+                <li>Willingness to relocate</li>
+            </ul>
+            <h3>Responsibilities</h3>
+            <ul>
+                <li>Supervising crew members</li>
+                <li>Coordinating naval operations</li>
+                <li>Ensuring the safety of the vessel and crew</li>
+            </ul>
+        </div>
+
+        <!-- Job Type 2 -->
+        <div class="career-box">
+            <h2>Engineer</h2>
+            <p><strong>Description:</strong> Work on maintaining and improving the Royal Navy's fleet. A key role in ensuring operational readiness.</p>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Degree in Mechanical or Electrical Engineering</li>
+                <li>Problem-solving and analytical skills</li>
+                <li>Ability to work under pressure</li>
+            </ul>
+            <h3>Responsibilities</h3>
+            <ul>
+                <li>Performing maintenance on naval equipment</li>
+                <li>Repairing faulty machinery</li>
+                <li>Collaborating with other departments to improve fleet performance</li>
+            </ul>
+        </div>
+
+        <!-- Job Type 3 -->
+        <div class="career-box">
+            <h2>Medic</h2>
+            <p><strong>Description:</strong> Provide crucial medical support to the crew during missions and training exercises.</p>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Medical degree or equivalent qualifications</li>
+                <li>Ability to remain calm under pressure</li>
+                <li>First Aid and CPR certification</li>
+            </ul>
+            <h3>Responsibilities</h3>
+            <ul>
+                <li>Providing medical care to injured crew members</li>
+                <li>Maintaining medical equipment</li>
+                <li>Assisting with health assessments</li>
+            </ul>
+        </div>
+
+        <!-- Job Type 4 -->
+        <div class="career-box">
+            <h2>Logistics Officer</h2>
+            <p><strong>Description:</strong> Manage and coordinate all logistics operations to ensure that the fleet operates smoothly.</p>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Experience in logistics or supply chain management</li>
+                <li>Organizational and planning skills</li>
+                <li>Ability to multitask in a fast-paced environment</li>
+            </ul>
+            <h3>Responsibilities</h3>
+            <ul>
+                <li>Coordinating supply deliveries to vessels</li>
+                <li>Managing inventory and supplies</li>
+                <li>Ensuring operational efficiency in logistics</li>
+            </ul>
+        </div>
+
+        <!-- Job Type 5 -->
+        <div class="career-box">
+            <h2>IT Specialist</h2>
+            <p><strong>Description:</strong> Manage and support the Navy’s IT infrastructure, ensuring systems are running smoothly and securely.</p>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Degree in Computer Science or related field</li>
+                <li>Experience with networking and cybersecurity</li>
+                <li>Ability to troubleshoot and resolve technical issues</li>
+            </ul>
+            <h3>Responsibilities</h3>
+            <ul>
+                <li>Maintaining IT systems and networks</li>
+                <li>Ensuring data security protocols are followed</li>
+                <li>Providing technical support to staff</li>
+            </ul>
+        </div>
+
+        <!-- Job Type 6 -->
+        <div class="career-box">
+            <h2>Public Relations Officer</h2>
+            <p><strong>Description:</strong> Manage and improve the Navy’s public image and media presence.</p>
+            <h3>Requirements</h3>
+            <ul>
+                <li>Degree in Public Relations, Communications, or Marketing</li>
+                <li>Excellent written and verbal communication skills</li>
+                <li>Experience in media relations</li>
+            </ul>
+            <h3>Responsibilities</h3>
+            <ul>
+                <li>Creating and distributing press releases</li>
+                <li>Managing the Navy’s social media accounts</li>
+                <li>Organizing public events and communications</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Royal Navy Roblox Group. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
